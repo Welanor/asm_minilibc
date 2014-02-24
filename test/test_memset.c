@@ -7,6 +7,7 @@ int	main(int argc, char *argv[])
   char tmp[] = "tsmjkfrjsdlkfjpoer";
   char	*str;
 
+  memset(0, 0, 0);
   str = strdup(tmp);
   printf("str => %s | ", str);
   memset(str, 'A', sizeof(tmp)  - 1);

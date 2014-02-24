@@ -5,7 +5,7 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Mon Feb 24 16:28:58 2014 Hugues
+## Last update Mon Feb 24 18:07:59 2014 Hugues
 ##
 
 SRC		=	strlen.S \
@@ -21,7 +21,7 @@ NAME		=	libasm.so
 OBJDIR		=	obj/
 SRCDIR		=	src/
 
-CFLAGS		+=	-f elf64
+CFLAGS		+=	-f elf64 -g
 
 LDFLAGS		+=	-shared
 
