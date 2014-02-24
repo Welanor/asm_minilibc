@@ -5,37 +5,30 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Sat Feb 22 19:04:48 2014 Hugues
+## Last update Mon Feb 24 13:36:28 2014 Hugues
 ##
 
-SRC		=	main.c \
-			envvar.c \
-			opt.c \
-			pty.c \
-			term.c \
-			file.c \
-			exec.c \
-			io.c
+SRC		=	strlen.S
 
-CC		=	gcc
+CC		=	nasm
 
 RM		=	rm -f
 
-NAME		=	my_script
+NAME		=	libasm.so
 
 OBJDIR		=	obj/
 SRCDIR		=	src/
 
-CFLAGS		+=	-Wall -Wextra
+CFLAGS		+=	-Wall -Wextra -fpic
 
-LDFLAGS		+=	-lrt
+LDFLAGS		+=	-shared
 
-OBJ		=	$(patsubst %.c,${OBJDIR}%.o, $(SRC))
+OBJ		=	$(patsubst %.S,${OBJDIR}%.o, $(SRC))
 
 dummy		:=	$(shell test -d $(OBJDIR) || mkdir -p $(OBJDIR))
 dummy		:=	$(shell test -d $(SRCDIR) || mkdir -p $(SRCDIR))
 
-$(OBJDIR)%.o:		$(patsubst %.c,${SRCDIR}%.c, %.c)
+$(OBJDIR)%.o:		$(patsubst %.S,${SRCDIR}%.S, %.S)
 			@if [ ! -d $(dir $@) ]; then mkdir -p $(dir $@); fi
 			@echo -e "Compiling $< { $(CFLAGS) }" | sed 's/^-e //' \
 			| sed 's/[-a-zA-Z]\+/\x1B[31m&\x1B[0m/g' \
