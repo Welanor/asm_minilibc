@@ -8,24 +8,19 @@ strlen:
 	push rbp
 	mov rbp, rsp
 
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, FormatStr
-	mov rdx, 13
-	syscall
-
-	mov rcx, 0
+	mov rcx, 0		; init count to 0
 
 loop_strlen:
-	cmp rdi, 0
-	mov rdx, rdi
-	add rdx, 1
-	mov rdi, rdx
-	je loop_strlen
+	mov al, [rdi]
+	cmp al, 0		; Check if we are at the end of the string
+	je end_strlen		; Jump to the end if it's true
+	inc rcx
+	inc rdi
+	jmp loop_strlen		; Otherwise we continue
+
+end_strlen:
+
+	mov rax, rcx		; Assign the length to rax, to return the value
 
 	pop rbp
-	mov rax, rcx
 	ret
-
-	section .rodata
-	FormatStr db 'Hello World !',0Ah,0
