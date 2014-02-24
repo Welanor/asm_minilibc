@@ -1,5 +1,7 @@
 [BITS 64]
 
+ ; The general register EBX, ESI, EDI, EBP, DS, ES, and SS, must be preserved by the called function
+
 	global memset, _memset
 	section .text
 
@@ -12,10 +14,9 @@ memset:
 
 loop_memset:
 		mov [rax + rsi], dl	;set value in memory
-		dec rsi	;d decrement
+		dec rsi	; decrement
 		cmp rsi, -1	; check if we have set all data
-	jnz loop_memset
-memset_end:
+jnz loop_memset
 
 	mov rsp, rbp
 	pop rbp
