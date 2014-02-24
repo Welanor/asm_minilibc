@@ -5,12 +5,13 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Mon Feb 24 13:36:28 2014 Hugues
+## Last update Mon Feb 24 14:01:08 2014 Hugues
 ##
 
 SRC		=	strlen.S
 
 CC		=	nasm
+LD		=	ld
 
 RM		=	rm -f
 
@@ -19,7 +20,7 @@ NAME		=	libasm.so
 OBJDIR		=	obj/
 SRCDIR		=	src/
 
-CFLAGS		+=	-Wall -Wextra -fpic
+CFLAGS		+=	-f elf64
 
 LDFLAGS		+=	-shared
 
@@ -35,12 +36,12 @@ $(OBJDIR)%.o:		$(patsubst %.S,${SRCDIR}%.S, %.S)
 			| sed 's/[A-Z]\+/\x1B[32m&\x1B[0m/g' \
 			| sed 's/[{}]/\x1B[34m&\x1B[0m/g' \
 			| sed 's/[─┬─├─└│]/\x1B[35m&\x1B[0m/g'
-			@$(CC) $(CFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) $< -o $@
 
 $(NAME):	$(OBJ)
 		@echo -e "Linking $@ { $(LDFLAGS) }" | sed 's/^-e //' \
 		| sed 's/[-a-zA-Z]\+/\x1B[34m&\x1B[0m/g'
-		@$(CC) $(LDFLAGS) -o $(NAME) $(OBJ)
+		@$(LD) $(LDFLAGS) -o $(NAME) $(OBJ)
 
 all:	$(NAME)
 
