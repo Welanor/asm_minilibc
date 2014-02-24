@@ -13,15 +13,15 @@ memset:
 	push rbp
 	mov rbp, rsp	; function header prologue
 
-	push rax ; save rax
-	mov rax, rsi ; use rax instead rsi
-	cmp rdx, 0 ; n > 0 ?
-	jng memset_end; else we quit
-
+	push rax	; save rax
+	mov rax, rsi	; use rax instead rsi
+	cmp rdx, 0	; n > 0 ?
+	jng memset_end	; else we quit
+	dec rdx ; decrement
 loop_memset:
 		mov [rdi + rdx], al	;set value in memory
 		dec rdx	; decrement
-		cmp rdx, 0	; check if we have set all data
+		cmp rdx, -1	; check if we have set all data
 jnz loop_memset
 memset_end:
 
