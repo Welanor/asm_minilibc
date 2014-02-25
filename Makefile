@@ -5,11 +5,12 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Mon Feb 24 18:07:59 2014 Hugues
+## Last update Tue Feb 25 19:06:49 2014 
 ##
 
 SRC		=	strlen.S \
-			memset.S
+			memset.S \
+			strchr.S
 
 CC		=	nasm
 LD		=	ld
