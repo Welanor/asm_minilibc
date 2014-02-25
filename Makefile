@@ -9,7 +9,8 @@
 ##
 
 SRC		=	strlen.S \
-			memset.S
+			memset.S \
+			memcpy.S
 
 CC		=	nasm
 LD		=	ld
