@@ -13,7 +13,6 @@ memset:
 	push rbp
 	mov rbp, rsp	; function header prologue
 
-	push rax	; save rax
 	mov rax, rsi	; use rax instead rsi
 	cmp rdx, 0	; n > 0 ?
 	jng memset_end	; else we quit
@@ -25,7 +24,7 @@ loop_memset:
 jnz loop_memset
 memset_end:
 
-	pop rax ; restore rax
+	mov rax, rdi
 	mov rsp, rbp ;epilogue
 	pop rbp
 	ret 0

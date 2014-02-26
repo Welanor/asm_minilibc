@@ -5,7 +5,7 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Tue Feb 25 20:49:56 2014 
+## Last update Tue Feb 25 20:49:56 2014
 ##
 
 SRC		=	strlen.S \
