@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memset, _memset
+	global memset:function, _memset:function
 	section .text
 
 	; void *memset(void *s, int c, size_t n);

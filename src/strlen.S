@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global strlen, _strlen
+	global strlen:function, _strlen:function
 	section .text
 
 _strlen:

@@ -5,7 +5,7 @@
 int	main(int argc, char *argv[])
 {
   char tmp[] = "tsmjkfrjsdlkfjpoer";
-  int tmpin[15] = {15};
+  int tmpin[3] = {6, 6, 6};
   char	*str;
 
   memset(0, 0, 0);
@@ -14,13 +14,13 @@ int	main(int argc, char *argv[])
   memset(str, 'A', sizeof(tmp)  - 1);
   printf("str -> %s\n", str);
   int i;
-  for (i = 0; i < 15; i++)
+  for (i = 0; i < 3; i++)
     {
       printf("%d, ", tmpin[i]);
     }
-  memset(tmp, 0, 14 * sizeof(int));
+  memset(tmp, 1, 2 * sizeof(int));
   printf("\n");
-  for (i = 0; i < 15; i++)
+  for (i = 0; i < 3; i++)
     {
       printf("%d, ", tmpin[i]);
     }

@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memcpy, _memcpy
+	global memcpy:function, _memcpy:function
 	section .text
 
 	; void *memcpy(void *dest, const void *src, size_t n);
@@ -25,6 +25,6 @@ jnz loop_memcpy
 memcpy_end:
 
 	mov rax, rdi ; return dest
-	mov rsp, rbp ;epilogue
+	mov rsp, rbp ; epilogue
 	pop rbp
 	ret 0
