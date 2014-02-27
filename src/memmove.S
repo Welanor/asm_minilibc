@@ -8,33 +8,33 @@
 	; rsi -> void* src
 	; rdx -> size_t n
 
+	; r8 tmp
+	; r9 sens
+	; r10 end
+
 _memmove:
 memmove:
 	push rbp
 	mov rbp, rsp	; function header prologue
 
-	cmp rsi, rdi
-	jg reverse_loop
+	mov rax, rdi ; init var for reverse order
+	sub rax, 1
+	mov r9, -1
+	mov r10, -1
 
-	xor rax, rax
+	cmp rdi, rsi
+	jg loop_memmove
+	xor rax, rax ; init var var for right order
+	mov r9, 1
+	mov r10, rdx
+
 loop_memmove:
-		cmp rax, rdx ; check if we are at the end
+		cmp rax, r10 ; check if we are at the end
 		jz memmove_end ; jump out if ok
 		mov r8b, [rsi + rax] ; get value from src
 		mov [rdi + rax], r8b ; write value in dest
-		inc rax	; increment
+		add rax, r9	; go in sens
 jmp loop_memmove
-
-reverse_loop:
-	dec rdx ; decrement rdx to not got write outside
-rloop_memmove:
-		cmp rdx, -1 ; check if we are at the end
-		jz memmove_end ; jump out if ok
-		mov r8b, [rsi + rdx] ; get value from src
-		mov [rdi + rdx], r8b ; write value in dest
-		dec rdx	; decrement
-jmp rloop_memmove
-
 memmove_end:
 
 	mov rax, rdi ; set dest as the return

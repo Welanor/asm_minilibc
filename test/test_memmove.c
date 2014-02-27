@@ -5,14 +5,14 @@
 int	main(int argc, char *argv[])
 {
   char tmp[] = "tsmjkfrjsdlkfjpoer";
-  char tmp2[] = "sdlfkcskdjfroizoro";
+  char tmp2[] = "abcdefghijklmnopqrstiov";
   char	*str;
 
   memmove(NULL, NULL, 0);
   str = strdup(tmp);
-  printf("str => %s | ", str);
-  str = memmove(&tmp2[5], tmp2, sizeof(tmp) - 7);
-  printf("str -> %s\n", str);
+  printf("str => %s | ", tmp2);
+  memmove(&tmp2[8], &tmp2[2], 3);
+  printf("str -> %s\n", tmp2);
   free(str);
   return 0;
 }
