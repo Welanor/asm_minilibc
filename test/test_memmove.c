@@ -11,7 +11,7 @@ int	main(int argc, char *argv[])
   memmove(NULL, NULL, 0);
   str = strdup(tmp);
   printf("str => %s | ", tmp2);
-  memmove(&tmp2[8], &tmp2[2], 3);
+  memmove(&tmp2[2], &tmp2[0], 5);
   printf("str -> %s\n", tmp2);
   free(str);
   return 0;

@@ -17,14 +17,14 @@ memmove:
 	push rbp
 	mov rbp, rsp	; function header prologue
 
-	mov rax, rdi ; init var for reverse order
+	mov rax, rdx ; init var for reverse order
 	sub rax, 1
 	mov r9, -1
 	mov r10, -1
 
 	cmp rdi, rsi
 	jg loop_memmove
-	xor rax, rax ; init var var for right order
+	xor rax, rax; init var var for right order
 	mov r9, 1
 	mov r10, rdx
 
