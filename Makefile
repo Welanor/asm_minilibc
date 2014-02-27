@@ -5,15 +5,16 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Thu Feb 27 22:43:53 2014 
+## Last update Thu Feb 27 23:02:56 2014 
 ##
 
 SRC		=	rindex.S \
 			strlen.S \
+			memset.S \
 			strchr.S \
 			strcmp.S \
-			memset.S \
-			memcpy.S
+			memcpy.S \
+			memmove.S
 
 CC		=	nasm
 LD		=	gcc
@@ -25,7 +26,7 @@ NAME		=	libasm.so
 OBJDIR		=	obj/
 SRCDIR		=	src/
 
-CFLAGS		+=	-f elf64 -g
+CFLAGS		+=	-f elf64
 
 LDFLAGS		+=	-shared
 
