@@ -5,17 +5,18 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Thu Feb 27 12:49:27 2014 
+## Last update Thu Feb 27 22:43:53 2014 
 ##
 
-SRC		=	strlen.S \
+SRC		=	rindex.S \
+			strlen.S \
 			strchr.S \
 			strcmp.S \
 			memset.S \
 			memcpy.S
 
 CC		=	nasm
-LD		=	ld
+LD		=	gcc
 
 RM		=	rm -f
 
@@ -66,4 +67,3 @@ help:
 	@echo -e "\033[37mTarget available: all, ${NAME}, clean, fclean\033[00m" | sed 's/^-e //'
 
 .PHONY:	all clean fclean re help
-
