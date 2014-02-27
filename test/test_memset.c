@@ -4,21 +4,21 @@
 
 int	main(int argc, char *argv[])
 {
-  char tmp[] = "tsmjkfrjsdlkfjpoer";
+  char tmp[] = "tsm";
   int tmpin[3] = {6, 6, 6};
   char	*str;
 
   memset(0, 0, 0);
   str = strdup(tmp);
   printf("str => %s | ", str);
-  memset(str, 'A', sizeof(tmp)  - 1);
+  memset(str, 'A', sizeof(tmp) - 1);
   printf("str -> %s\n", str);
   int i;
   for (i = 0; i < 3; i++)
     {
       printf("%d, ", tmpin[i]);
     }
-  memset(tmp, 1, 2 * sizeof(int));
+  memset(tmpin, 0, 3 * sizeof(int));
   printf("\n");
   for (i = 0; i < 3; i++)
     {
