@@ -12,7 +12,8 @@ SRC		=	strlen.S \
 			memset.S \
 			strchr.S \
 			strcmp.S \
-			memcpy.S
+			memcpy.S \
+			memmove.S
 
 CC		=	nasm
 LD		=	ld
