@@ -13,18 +13,17 @@ memcpy:
 	push rbp
 	mov rbp, rsp	; function header prologue
 
-	cmp rdx, 0	; n > 0 ?
-	jng memcpy_end	; else we quit
-	dec rdx ; decrement
+	xor rax, rax
 loop_memcpy:
-		mov rax, [rsi + rdx]	; stock value in rax
-		mov [rdi + rdx], al	;set value in memory
-		dec rdx	; decrement
-		cmp rdx, -1	; check if we have set all data
-jnz loop_memcpy
+		cmp rax, rdx ; check if we are at the end
+		jz memcpy_end ; jump out if ok
+		mov r8b, [rsi + rax] ; get value from src
+		mov [rdi + rax], r8b ; write value in dest
+		inc rax	; increment
+jmp loop_memcpy
 memcpy_end:
 
-	mov rax, rdi ; return dest
-	mov rsp, rbp ; epilogue
+	mov rax, rdi ; set dest as the return
+	mov rsp, rbp ;epilogue
 	pop rbp
 	ret 0
