@@ -5,11 +5,12 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Thu Feb 27 23:02:56 2014 
+## Last update Fri Feb 28 02:45:07 2014 
 ##
 
 SRC		=	rindex.S \
 			strlen.S \
+			strncmp.S \
 			memset.S \
 			strchr.S \
 			strcmp.S \
