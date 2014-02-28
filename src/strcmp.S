@@ -3,6 +3,10 @@
 	global strcmp:function, _strcmp:function
 	section .text
 
+	; int strcmp(const char *s1, const char *s2);
+	; rdi -> void* s1
+	; rsi -> void* s2
+
 _strcmp:
 strcmp:
 	push rbp
@@ -32,5 +36,6 @@ end_strcmp:
 
 	pop rsi 	; restore rsi
 	pop rdi		; restore rdi
+
 	pop rbp
 	ret 0

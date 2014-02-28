@@ -16,7 +16,7 @@ memcpy:
 	xor rax, rax
 loop_memcpy:
 		cmp rax, rdx ; check if we are at the end
-		jz memcpy_end ; jump out if ok
+		je memcpy_end ; jump out if ok
 		mov r8b, [rsi + rax] ; get value from src
 		mov [rdi + rax], r8b ; write value in dest
 		inc rax	; increment

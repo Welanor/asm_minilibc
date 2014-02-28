@@ -16,7 +16,7 @@ memset:
 	xor rax, rax
 loop_memset:
 		cmp rax, rdx ; check if we are at the end
-		jz memset_end ; jump out if ok
+		je memset_end ; jump out if ok
 		mov [rdi + rax], sil ; set value in memory
 		inc rax	; increment
 jmp loop_memset
