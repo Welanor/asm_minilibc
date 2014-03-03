@@ -9,7 +9,7 @@ strlen:
 	mov rbp, rsp	; function header
 
 	push rdi	; save rdi
-	mov rcx, 0	; init count to 0
+	xor rcx, rcx	; init count to 0
 
 loop_strlen:
 	mov al, [rdi]
