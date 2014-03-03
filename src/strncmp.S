@@ -15,6 +15,8 @@ strncmp:
 	mov r8, 0
 	mov rax, 0
 	mov rcx, 0
+	cmp rdx, 0
+	je end_strncmp
 
 loop_strncmp:
 	mov al, [rdi]
@@ -33,7 +35,7 @@ loop_strncmp:
 	jmp loop_strncmp	; Otherwise we continue
 
 end_strncmp:
-	sub rax, r8
+	sub al, r8b
 
 	pop rdx		; restore rdx
 	pop rsi 	; restore rsi
