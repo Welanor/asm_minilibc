@@ -5,7 +5,7 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Fri Feb 28 02:45:07 2014 
+## Last update Fri Feb 28 02:45:07 2014
 ##
 
 SRC		=	rindex.S \

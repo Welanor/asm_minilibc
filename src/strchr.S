@@ -3,10 +3,15 @@
 	global strchr:function, _strchr:function
 	section .text
 
+	; char *strchr(const char *s, int c);
+	; rdi -> const char* s
+	; rsi -> int c
+
 _strchr:
 strchr:
 	push rbp
 	mov rbp, rsp		; function header
+
 	push rdi		; save rdi
 	push rsi		; save rsi
 
@@ -29,5 +34,7 @@ end_found:
 end:
 	pop rsi
 	pop rdi
+
+	mov rsp, rbp ;epilogue
 	pop rbp
 	ret

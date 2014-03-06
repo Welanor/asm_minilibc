@@ -3,6 +3,9 @@
 	global strlen:function, _strlen:function
 	section .text
 
+	; int strlen(const char *s);
+	; rdi -> const char* s
+
 _strlen:
 strlen:
 	push rbp
@@ -23,5 +26,7 @@ end_strlen:
 	mov rax, rcx		; Assign the length to rax, to return the value
 
 	pop rdi		; restore rdi
+
+	mov rsp, rbp ;epilogue
 	pop rbp
 	ret 0

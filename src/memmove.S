@@ -24,7 +24,7 @@ memmove:
 
 	cmp rdi, rsi
 	jg loop_memmove
-	xor rax, rax; init var var for right order
+	xor rax, rax ; init var var for right order
 	mov r9, 1
 	mov r10, rdx
 

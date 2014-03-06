@@ -37,5 +37,6 @@ end_strcmp:
 	pop rsi 	; restore rsi
 	pop rdi		; restore rdi
 
+	mov rsp, rbp ;epilogue
 	pop rbp
 	ret 0
