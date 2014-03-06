@@ -3,6 +3,10 @@
 	global strstr:function, _strstr:function
 	section .text
 
+	; char *strstr(const char *haystack, const char *needle);
+	; rdi -> const char *haystack
+	; rsi -> const char *needle
+
 _strstr:
 strstr:
 	push rbp
@@ -31,6 +35,8 @@ error_strstr:
 end_strstr:
 	pop rsi		; restore rsi
 	pop rdi		; restore rdi
+
+	mov rsp, rbp ;epilogue
 	pop rbp
 	ret 0
 
@@ -38,8 +44,8 @@ init_cmp:
 	xor rcx, rcx
 
 loop_test:
-	mov al, [rdi+rcx]
-	mov r8b, [rsi+rcx]
+	mov al, [rdi + rcx]
+	mov r8b, [rsi + rcx]
 	cmp r8b, 0
 	je find_str
 	cmp al, r8b
