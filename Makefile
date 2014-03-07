@@ -13,10 +13,10 @@ SRC		=	rindex.S \
 			strncmp.S \
 			memset.S \
 			strchr.S \
-			strpbrk.S \
 			strcmp.S \
 			memcpy.S \
-			memmove.S
+			memmove.S \
+			strpbrk.S
 
 CC		=	nasm
 LD		=	gcc
