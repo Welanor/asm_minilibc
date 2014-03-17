@@ -3,6 +3,10 @@
 	global strcasecmp:function, _strcasecmp:function
 	section .text
 
+	; int strcasecmp(const char *s1, const char *s2);
+	; rdi -> const char* s1
+	; rsi -> const char *s2
+
 _strcasecmp:
 strcasecmp:
 	push rbp

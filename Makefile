@@ -8,7 +8,8 @@
 ## Last update Thu Mar 13 15:27:50 2014
 ##
 
-SRC		=	strpbrk.S \
+SRC		=	strcspn.S \
+			strpbrk.S \
 			rindex.S \
 			strlen.S \
 			strncmp.S \
