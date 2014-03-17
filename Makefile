@@ -8,17 +8,17 @@
 ## Last update Thu Mar 13 15:27:50 2014
 ##
 
-SRC		=	strcspn.S \
-			strpbrk.S \
-			rindex.S \
-			strlen.S \
-			strncmp.S \
-			memset.S \
-			strchr.S \
-			strcmp.S \
-			memcpy.S \
-			memmove.S \
-			strcasecmp.S
+SRC		=	strcspn.S
+			# strpbrk.S \
+			# rindex.S \
+			# strlen.S \
+			# strncmp.S \
+			# memset.S \
+			# strchr.S \
+			# strcmp.S \
+			# memcpy.S \
+			# memmove.S \
+			# strcasecmp.S
 
 CC		=	nasm
 LD		=	gcc
