@@ -3,9 +3,10 @@
 	global strncmp:function, _strncmp:function
 	section .text
 
-	; int strcmp(const char *s1, const char *s2);
+	; int strncmp(const char *s1, const char *s2, size_t n);
 	; rdi -> const char *s1
 	; rsi -> const char *s2
+	; rdx -> size_t n
 
 _strncmp:
 strncmp:

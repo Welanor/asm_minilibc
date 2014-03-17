@@ -13,9 +13,15 @@ rindex:
 	push rbp
 	mov rbp, rsp		; function header
 
+	push rdi ; save rdi
+	push rsi ; save rsi
+
 	call _strlen wrt ..plt
 	mov rcx, rax
 	dec rcx
+
+	pop rdi ; restore rdi
+	pop rsi ; restore rsi
 
 loop_rindex:
 	mov al, [rdi+rcx]

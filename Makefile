@@ -18,7 +18,8 @@ SRC		=	strpbrk.S \
 			strcmp.S \
 			memcpy.S \
 			memmove.S \
-			strcasecmp.S
+			strcasecmp.S \
+			strdup.S
 
 CC		=	nasm
 LD		=	gcc
