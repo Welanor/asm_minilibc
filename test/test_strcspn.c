@@ -4,16 +4,16 @@
 
 int main(int argc, char *argv[])
 {
-  printf("toto => %s\n", strpbrk("toto", "t"));
-  printf("toto => %s\n", strpbrk("toto", "o"));
-  printf("toto => %s\n", strpbrk("toto", ""));
-  printf(" => %s\n", strpbrk("", "sdfsdf"));
-  printf(" => %s\n", strpbrk("", ""));
-  printf("abcdefghijkl => %s\n", strpbrk("abcdefghijkl", "ejc"));
-  printf("abcdefghijkl => %s\n", strpbrk("abcdefghijkl", "j"));
-  printf("abcdefghijkl => %s\n", strpbrk("abcdefghijkl", "l"));
-  printf("abcdefghijkl => %s\n", strpbrk("abcdefghijkl", "a"));
-  printf("abcdefghijkl => %s\n", strpbrk("i", "abcdefghijkl"));
+  printf("toto => %d\n", strcspn("toto", "t"));
+  printf("toto => %d\n", strcspn("toto", "o"));
+  printf("toto => %d\n", strcspn("toto", ""));
+  printf(" => %d\n", strcspn("", "sdfsdf"));
+  printf(" => %d\n", strcspn("", ""));
+  printf("abcdefghijkl => %d\n", strcspn("abcdefghijkl", "ejc"));
+  printf("abcdefghijkl => %d\n", strcspn("abcdefghijkl", "j"));
+  printf("abcdefghijkl => %d\n", strcspn("abcdefghijkl", "l"));
+  printf("abcdefghijkl => %d\n", strcspn("abcdefghijkl", "a"));
+  printf("abcdefghijkl => %d\n", strcspn("i", "abcdefghijkl"));
 
   return 0;
 }

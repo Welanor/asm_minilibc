@@ -12,9 +12,6 @@ strcmp:
 	push rbp
 	mov rbp, rsp	; function header
 
-	push rdi	; save rdi
-	push rsi	; save rsi
-
 	mov r8, 0
 	mov rax, 0
 
@@ -33,9 +30,6 @@ loop_strcmp:
 
 end_strcmp:
 	sub rax, r8
-
-	pop rsi 	; restore rsi
-	pop rdi		; restore rdi
 
 	mov rsp, rbp ;epilogue
 	pop rbp

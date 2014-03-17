@@ -12,9 +12,6 @@ strstr:
 	push rbp
 	mov rbp, rsp	; function header
 
-	push rdi	; save rdi
-	push rsi	; save rsi
-
 loop_strstr:
 	mov al, [rdi]
 	cmp al, [rsi]
@@ -33,8 +30,6 @@ error_strstr:
 	mov rax, 0		; Assign the pointer on rdi to rax, to return the value
 
 end_strstr:
-	pop rsi		; restore rsi
-	pop rdi		; restore rdi
 
 	mov rsp, rbp ;epilogue
 	pop rbp

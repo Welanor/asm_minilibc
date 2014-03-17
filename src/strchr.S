@@ -12,9 +12,6 @@ strchr:
 	push rbp
 	mov rbp, rsp		; function header
 
-	push rdi		; save rdi
-	push rsi		; save rsi
-
 loop_strchr:
 	mov al, [rdi]
 	cmp al, sil
@@ -32,8 +29,6 @@ end_found:
 	mov rax, rdi		; Return rdi
 
 end:
-	pop rsi
-	pop rdi
 
 	mov rsp, rbp ;epilogue
 	pop rbp

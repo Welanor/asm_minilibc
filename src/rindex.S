@@ -13,9 +13,6 @@ rindex:
 	push rbp
 	mov rbp, rsp		; function header
 
-	push rdi		; save rdi
-	push rsi		; save rsi
-
 	call _strlen wrt ..plt
 	mov rcx, rax
 	dec rcx
@@ -38,8 +35,6 @@ end_found:
 	mov rax, rdi		; Return rdi
 
 end:
-	pop rsi
-	pop rdi
 
 	mov rsp, rbp ;epilogue
 	pop rbp

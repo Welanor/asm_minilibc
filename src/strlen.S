@@ -11,7 +11,6 @@ strlen:
 	push rbp
 	mov rbp, rsp	; function header
 
-	push rdi	; save rdi
 	xor rcx, rcx	; init count to 0
 
 loop_strlen:
@@ -24,8 +23,6 @@ loop_strlen:
 
 end_strlen:
 	mov rax, rcx		; Assign the length to rax, to return the value
-
-	pop rdi		; restore rdi
 
 	mov rsp, rbp ;epilogue
 	pop rbp
