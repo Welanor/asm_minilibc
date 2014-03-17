@@ -17,9 +17,8 @@ loop_strpbrk:
 	cmp al, 0 ; check that we are not at end of the string
 	je end_loop_strpbrk
 	mov r8, rsi ; store accept char in r8
-	xor r9, r9
 check_loop:
-	mov cl, [r8 + r9] ; go trought accept string
+	mov cl, [r8] ; go trought accept string
 	cmp cl, al ; check if have find a character
 	jne check_if
 	mov rax, rdi ; set return as stuff
@@ -27,7 +26,6 @@ check_loop:
 check_if:
 	cmp cl, 0 ; check end of string
 	je end_check_loop
-	inc r9 ; inc accept string
 	jmp check_loop
 end_check_loop:
 

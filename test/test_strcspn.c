@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
   printf("abcdefghijkl => %d\n", strcspn("abcdefghijkl", "l"));
   printf("abcdefghijkl => %d\n", strcspn("abcdefghijkl", "a"));
   printf("abcdefghijkl => %d\n", strcspn("i", "abcdefghijkl"));
+  printf("abcdefghijkl => %d\n", strcspn("i", "abcdefghjl"));
 
   return 0;
 }
