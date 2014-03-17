@@ -5,10 +5,11 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Thu Mar 13 15:27:50 2014 
+## Last update Thu Mar 13 15:27:50 2014
 ##
 
-SRC		=	rindex.S \
+SRC		=	strpbrk.S \
+			rindex.S \
 			strlen.S \
 			strncmp.S \
 			memset.S \
@@ -17,7 +18,6 @@ SRC		=	rindex.S \
 			memcpy.S \
 			memmove.S \
 			strcasecmp.S
-			# strpbrk.S \
 
 CC		=	nasm
 LD		=	gcc
