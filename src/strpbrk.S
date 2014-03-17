@@ -25,7 +25,8 @@ check_loop:
 	jmp end2_loop_strpbrk ; we found it so lets go out
 check_if:
 	cmp cl, 0 ; check end of string
-	jne end_check_loop
+	je end_check_loop
+	inc r8
 	jmp check_loop
 end_check_loop:
 
