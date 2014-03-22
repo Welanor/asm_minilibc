@@ -39,9 +39,11 @@ end_strcasecmp:
 case:
 	cmp al, r8b		; Check if the string is equal
 	je suite		; Jump to the end if it's false
+	cmp r8b, 65
+	jl lower
 	cmp r8b, 90
-	jg lower
-	jmp upper
+	jle upper
+	jmp lower
 
 lower:
 	cmp al, 65
