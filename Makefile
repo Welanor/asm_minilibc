@@ -5,7 +5,7 @@
 ## Login   <moriss_h@epitech.net>
 ##
 ## Started on  Sun Jun  9 03:35:24 2013 Hugues
-## Last update Thu Mar 13 15:27:50 2014
+## Last update Sun Mar 23 18:15:30 2014 
 ##
 
 SRC		=	strpbrk.S \
@@ -19,7 +19,9 @@ SRC		=	strpbrk.S \
 			memcpy.S \
 			memmove.S \
 			strcasecmp.S \
-			strdup.S
+			strdup.S \
+			strcat.S \
+			strncat.S
 
 CC		=	nasm
 LD		=	gcc
