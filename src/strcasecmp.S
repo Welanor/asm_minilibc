@@ -12,6 +12,9 @@ strcasecmp:
 	push rbp
 	mov rbp, rsp	; function header
 
+	push rdi
+	push rsi
+
 	xor r8, r8
 	xor rax, rax
 
@@ -32,6 +35,9 @@ suite:
 end_strcasecmp:
 	sub rax, r8
 
+	pop rsi
+	pop rdi
+
 	mov rsp, rbp 	; epilogue
 	pop rbp
 	ret 0
@@ -40,12 +46,12 @@ case:
 	cmp al, r8b		; Check if the string is equal
 	je suite		; Jump to the end if it's false
 	cmp r8b, 65
-	jl lower
+	jl lower_s1
 	cmp r8b, 90
-	jle upper
-	jmp lower
+	jle lower_s2
+	jmp lower_s1
 
-lower:
+lower_s1:
 	cmp al, 65
 	jl end_strcasecmp
 	cmp al, 90
@@ -55,12 +61,12 @@ lower:
 	je suite		; Jump to the end if it's false
 	jmp end_strcasecmp
 
-upper:
-	cmp al, 97
+lower_s2:
+	cmp r8b, 65
 	jl end_strcasecmp
-	cmp al, 122
+	cmp r8b, 90
 	jg end_strcasecmp
-	sub rax, 32
+	add r8, 32
 	cmp al, r8b		; Check if the string is equal
 	je suite		; Jump to the end if it's false
 	jmp end_strcasecmp
