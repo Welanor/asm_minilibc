@@ -14,7 +14,6 @@ strncat:
 	mov rbp, rsp		; function header prologue
 
 	push rdi
-	push rsi
 
 	xor rax, rax
 	xor rcx, rcx
@@ -42,7 +41,7 @@ strncat_end:
 
 	mov rax, 0
 	mov [rdi], al
-	pop rsi
+
 	pop rdi
 
 	mov rax, rdi		; set dest as the return

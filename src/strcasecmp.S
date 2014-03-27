@@ -12,9 +12,6 @@ strcasecmp:
 	push rbp
 	mov rbp, rsp	; function header
 
-	push rdi
-	push rsi
-
 	xor r8, r8
 	xor rax, rax
 
@@ -34,9 +31,6 @@ suite:
 
 end_strcasecmp:
 	sub rax, r8
-
-	pop rsi
-	pop rdi
 
 	mov rsp, rbp 	; epilogue
 	pop rbp
