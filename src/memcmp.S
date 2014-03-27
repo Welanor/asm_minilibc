@@ -33,6 +33,7 @@ loop_memcmp:
 
 end_memcmp:
 	sub al, r8b
+	movsx rax, al ; mov signed extend
 
 	mov rsp, rbp ;epilogue
 	pop rbp
