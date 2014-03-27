@@ -30,7 +30,8 @@ suite:
 	jmp loop_strcasecmp		; Otherwise we continue
 
 end_strcasecmp:
-	sub rax, r8
+	sub al, r8b
+	movsx rax, al ; mov signed extend
 
 	mov rsp, rbp 	; epilogue
 	pop rbp

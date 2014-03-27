@@ -37,6 +37,7 @@ loop_strncmp:
 
 end_strncmp:
 	sub al, r8b
+	movsx rax, al ; mov signed extend
 
 	mov rsp, rbp ;epilogue
 	pop rbp

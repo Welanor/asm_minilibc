@@ -29,7 +29,8 @@ loop_strcmp:
 	jmp loop_strcmp		; Otherwise we continue
 
 end_strcmp:
-	sub rax, r8
+	sub al, r8b
+	movsx rax, al ; mov signed extend
 
 	mov rsp, rbp ;epilogue
 	pop rbp
