@@ -13,9 +13,9 @@ memcmp:
 	push rbp
 	mov rbp, rsp	; function header
 
-	mov r8, 0
-	mov rax, 0
-	mov rcx, 0
+	xor r8, r8
+	xor rax, rax
+	xor rcx, rcx
 	cmp rdx, 0
 	je end_memcmp
 
