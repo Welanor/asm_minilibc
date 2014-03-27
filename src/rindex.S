@@ -20,9 +20,6 @@ rindex:
 	mov rcx, rax
 	dec rcx
 
-	pop rdi ; restore rdi
-	pop rsi ; restore rsi
-
 loop_rindex:
 	mov al, [rdi+rcx]
 	cmp al, sil
@@ -42,6 +39,8 @@ end_found:
 
 end:
 
+	pop rdi ; restore rdi
+	pop rsi ; restore rsi
 	mov rsp, rbp ;epilogue
 	pop rbp
 	ret

@@ -11,6 +11,7 @@ _strchr:
 strchr:
 	push rbp
 	mov rbp, rsp		; function header
+	push rdi
 
 loop_strchr:
 	mov al, [rdi]
@@ -30,6 +31,7 @@ end_found:
 
 end:
 
+	pop rdi
 	mov rsp, rbp ;epilogue
 	pop rbp
 	ret
