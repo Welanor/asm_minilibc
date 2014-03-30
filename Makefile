@@ -25,7 +25,8 @@ SRC		=	strpbrk.S \
 			strcpy.S \
 			strncpy.S \
 			memcmp.S \
-			memchr.S
+			memchr.S \
+			fabs.S
 
 CC		=	nasm
 LD		=	gcc
