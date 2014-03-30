@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global strncat:function, _strncat:function
+	global strncat:function
 	section .text
 
 	; char *strncat(char *dest, const char *src, size_t n);
@@ -8,7 +8,6 @@
 	; rsi -> char* src
 	; rdx -> size_t n
 
-_strncat:
 strncat:
 	push rbp
 	mov rbp, rsp		; function header prologue

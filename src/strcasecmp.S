@@ -1,13 +1,12 @@
 [BITS 64]
 
-	global strcasecmp:function, _strcasecmp:function
+	global strcasecmp:function
 	section .text
 
 	; int strcasecmp(const char *s1, const char *s2);
 	; rdi -> const char* s1
 	; rsi -> const char *s2
 
-_strcasecmp:
 strcasecmp:
 	push rbp
 	mov rbp, rsp	; function header

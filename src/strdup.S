@@ -1,20 +1,19 @@
 [BITS 64]
 
-	global strdup:function, _strdup:function
-	extern _strlen, _memcpy, malloc
+	global strdup:function
+	extern strlen, memcpy, malloc
 	section .text
 
 	; char *strdup(const char *s);
 	; rdi -> const char* s
 
-_strdup:
 strdup:
 	push rbp
 	mov rbp, rsp		; function header
 
 	push rdi ; save rdi
 
-	call _strlen wrt ..plt ; call strlen
+	call strlen wrt ..plt ; call strlen
 	add rax, 1 ; add \0 space
 	push rax ; conserve string size
 	mov rdi, rax ; set malloc param
@@ -27,7 +26,7 @@ strdup:
 	mov rdi, rax ; dest <- rax
 	mov rsi, r8 ; src <- r8
 	mov rdx, r9 ; n <- r9
-	call _memcpy wrt ..plt ; call memcpy
+	call memcpy wrt ..plt ; call memcpy
 end_strdup:
 
 	mov rsp, rbp ;epilogue

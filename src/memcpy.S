@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memcpy:function, _memcpy:function
+	global memcpy:function
 	section .text
 
 	; void *memcpy(void *dest, const void *src, size_t n);
@@ -8,7 +8,6 @@
 	; rsi -> void* src
 	; rdx -> size_t n
 
-_memcpy:
 memcpy:
 	push rbp
 	mov rbp, rsp	; function header prologue

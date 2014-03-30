@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memcmp:function, _memcmp:function
+	global memcmp:function
 	section .text
 
 	; int memcmp(const void *ptr1, const void *ptr2, size_t num);
@@ -8,7 +8,6 @@
 	; rsi -> const char *ptr2
 	; rdx -> size_t num
 
-_memcmp:
 memcmp:
 	push rbp
 	mov rbp, rsp	; function header
