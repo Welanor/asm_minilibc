@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memmove:function, _memmove:function
+	global _memmove:function
 	section .text
 
 	; void *memmove(void *dest, const void *src, size_t n);
@@ -13,7 +13,6 @@
 	; r10 end
 
 _memmove:
-memmove:
 	push rbp
 	mov rbp, rsp	; function header prologue
 
