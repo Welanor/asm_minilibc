@@ -1,14 +1,13 @@
 [BITS 64]
 
-	global rindex:function, _rindex:function
-	extern _strlen
+	global rindex:function
+	extern strlen
 	section .text
 
 	; char *rindex(const char *s, int c);
 	; rdi -> const char* s
 	; rsi -> int c
 
-_rindex:
 rindex:
 	push rbp
 	mov rbp, rsp		; function header
@@ -16,7 +15,7 @@ rindex:
 	push rdi ; save rdi
 	push rsi ; save rsi
 
-	call _strlen wrt ..plt
+	call strlen wrt ..plt
 	mov rcx, rax
 	dec rcx
 

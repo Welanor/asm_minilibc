@@ -1,13 +1,12 @@
 [BITS 64]
 
-	global strcmp:function, _strcmp:function
+	global strcmp:function
 	section .text
 
 	; int strcmp(const char *s1, const char *s2);
 	; rdi -> void* s1
 	; rsi -> void* s2
 
-_strcmp:
 strcmp:
 	push rbp
 	mov rbp, rsp	; function header

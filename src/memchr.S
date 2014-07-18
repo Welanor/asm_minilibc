@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memchr:function, _memchr:function
+	global memchr:function
 	section .text
 
 	; void *memchr(const void *s, int c, size_t n);
@@ -8,7 +8,6 @@
 	; rsi -> int c
 	; rdx -> size_t n
 
-_memchr:
 memchr:
 	push rbp
 	mov rbp, rsp		; function header

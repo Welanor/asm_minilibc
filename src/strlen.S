@@ -1,12 +1,11 @@
 [BITS 64]
 
-	global strlen:function, _strlen:function
+	global strlen:function
 	section .text
 
 	; int strlen(const char *s);
 	; rdi -> const char* s
 
-_strlen:
 strlen:
 	push rbp
 	mov rbp, rsp	; function header

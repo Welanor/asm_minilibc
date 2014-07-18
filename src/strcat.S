@@ -1,13 +1,12 @@
 [BITS 64]
 
-	global strcat:function, _strcat:function
+	global strcat:function
 	section .text
 
 	; char *strcat(char *dest, const char *src);
 	; rdi -> char* dest
 	; rsi -> char* src
 
-_strcat:
 strcat:
 	push rbp
 	mov rbp, rsp		; function header prologue

@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global strncmp:function, _strncmp:function
+	global strncmp:function
 	section .text
 
 	; int strncmp(const char *s1, const char *s2, size_t n);
@@ -8,7 +8,6 @@
 	; rsi -> const char *s2
 	; rdx -> size_t n
 
-_strncmp:
 strncmp:
 	push rbp
 	mov rbp, rsp	; function header

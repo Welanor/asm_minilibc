@@ -1,6 +1,6 @@
 [BITS 64]
 
-	global memset:function, _memset:function
+	global memset:function
 	section .text
 
 	; void *memset(void *s, int c, size_t n);
@@ -8,7 +8,6 @@
 	; rsi -> int c
 	; rdx -> size_t n
 
-_memset:
 memset:
 	push rbp
 	mov rbp, rsp	; function header prologue

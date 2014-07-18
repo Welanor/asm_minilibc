@@ -1,13 +1,12 @@
 [BITS 64]
 
-	global strstr:function, _strstr:function
+	global strstr:function
 	section .text
 
 	; char *strstr(const char *haystack, const char *needle);
 	; rdi -> const char *haystack
 	; rsi -> const char *needle
 
-_strstr:
 strstr:
 	push rbp
 	mov rbp, rsp	; function header
